@@ -153,7 +153,7 @@ const Main = () => {
     }
 
     if (loading) {
-        return (<div className='w-full min-h-[400px] relative'>
+        return (<div className='w-full min-h-[600px] relative'>
             <div className='absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
                 <div className="loader">
                     <div className="justify-content-center jimu-primary-loading"></div>
@@ -176,7 +176,7 @@ const Main = () => {
                     <option value='low to high'>price: low to high</option>
                 </select>
             </div>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+            <div className='pb-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
 
                 <div className={showFilter ? 'relative' : 'hidden'}>
                     {
