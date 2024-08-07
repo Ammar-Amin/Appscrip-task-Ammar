@@ -40,6 +40,7 @@ body {
 
 .hover:hover {
   text-decoration: underline;
+  color: rgb(137, 128, 128);
   cursor: pointer;
 }
 
