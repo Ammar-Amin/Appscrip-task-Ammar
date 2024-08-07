@@ -181,9 +181,12 @@ const Main = () => {
                 <div className={showFilter ? 'relative' : 'hidden'}>
                     {
                         showFilter && <div className='absolute md:static z-20 bg-white w-[150px] md:w-[260px]'>
-                            {/* <input type='checkbox' className='p-4 font-bold'>customizable</input> */}
+                            <div className='flex gap-3'>
+                                <input type='checkbox' className='p-4 font-bold' />
+                                <label className='uppercase'>customizable</label>
+                            </div>
                             {
-                                filters.length > 0 && filters.map((item, i) => <div key={i}
+                                filters.length > 0 && filters.map((item, i) => <div key={i + item.title}
                                     className='p-4 border-b-[1px] border-slate-400'>
                                     <span className='text-xl font-bold hover'
                                         onClick={() => setFilters([...filters, item.show = !item.show])}
@@ -195,10 +198,10 @@ const Main = () => {
                                             <span className='hover' onClick={() => handleSelectAll(i)}>All</span>
                                             <span className='hover' onClick={() => handleUnselectAll(i)}>Unselect All</span>
                                             <ul>{item.option.map((elem) =>
-                                                Object.keys(elem).map((key) => (
-                                                    <li key={key}>
-                                                        <input type="checkbox" value={elem[key]} id={key} />
-                                                        <label className='ml-3' htmlFor={key}>{[key][0]}</label>
+                                                Object.keys(elem).map((key, i) => (
+                                                    <li key={key + Date.now()}>
+                                                        <input type="checkbox" value={elem[key]} id={key + i} />
+                                                        <label className='ml-3' htmlFor={key + i}>{[key][0]}</label>
                                                     </li>
                                                 ))
                                             )}
@@ -212,7 +215,7 @@ const Main = () => {
                 </div>
                 {
                     products.length > 0 && products.map((prod) => (
-                        <div className="mx-auto mt-11 w-36 md:w-48 xl:w-72 transform overflow-hidden shadow-md duration-300 hover:scale-105">
+                        <div key={prod.title} className="mx-auto mt-11 w-36 md:w-48 xl:w-72 transform overflow-hidden shadow-md duration-300 hover:scale-105">
                             <img className="h-48 md:h-60 xl:h-96 w-full object-cover object-center" src={prod.image} alt={prod.image} />
                             <div className="p-4">
                                 <h2 className="mb-2 text-lg font-medium text-gray-900">{
