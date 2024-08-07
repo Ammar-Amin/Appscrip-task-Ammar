@@ -78,6 +78,7 @@ const Main = () => {
             ]
         },
     ])
+    let [loading, setLoading] = useState(false)
     let [products, setProducts] = useState([])
 
     let obj = {
@@ -89,10 +90,17 @@ const Main = () => {
         ]
     }
 
-    function fetchProducts() {
-        fetch('https://fakestoreapi.com/products')
-            .then(res => res.json())
-            .then(json => setProducts(json))
+    async function fetchProducts() {
+        setLoading(true)
+        try {
+            let res = await fetch('https://fakestoreapi.com/products')
+            let json = await res.json()
+            setProducts(json)
+        } catch (e) {
+            console.log(e)
+        } finally {
+            setLoading(false)
+        }
     }
 
     useEffect(() => {
@@ -142,6 +150,16 @@ const Main = () => {
 
             return newFilter
         })
+    }
+
+    if (loading) {
+        return (<div className='w-full min-h-[400px] relative'>
+            <div className='absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
+                <div className="loader">
+                    <div className="justify-content-center jimu-primary-loading"></div>
+                </div>
+            </div>
+        </div>)
     }
 
     return (
@@ -194,14 +212,14 @@ const Main = () => {
                 </div>
                 {
                     products.length > 0 && products.map((prod) => (
-                        <div class="mx-auto mt-11 w-36 md:w-48 xl:w-72 transform overflow-hidden shadow-md duration-300 hover:scale-105">
-                            <img class="h-48 md:h-60 xl:h-96 w-full object-cover object-center" src={prod.image} alt={prod.image} />
-                            <div class="p-4">
-                                <h2 class="mb-2 text-lg font-medium text-gray-900">{
+                        <div className="mx-auto mt-11 w-36 md:w-48 xl:w-72 transform overflow-hidden shadow-md duration-300 hover:scale-105">
+                            <img className="h-48 md:h-60 xl:h-96 w-full object-cover object-center" src={prod.image} alt={prod.image} />
+                            <div className="p-4">
+                                <h2 className="mb-2 text-lg font-medium text-gray-900">{
                                     prod.title.length > 10 ? prod.title.slice(0, 8) + "..." : prod.title
                                 }</h2>
-                                <div class="flex justify-between items-center">
-                                    <p class="mr-2 text-sm font-medium text-gray-900">${prod.price}</p>
+                                <div className="flex justify-between items-center">
+                                    <p className="mr-2 text-sm font-medium text-gray-900">${prod.price}</p>
                                     <svg className='icon' xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402m5.726-20.583c-2.203 0-4.446 1.042-5.726 3.238-1.285-2.206-3.522-3.248-5.719-3.248-3.183 0-6.281 2.187-6.281 6.191 0 4.661 5.571 9.429 12 15.809 6.43-6.38 12-11.148 12-15.809 0-4.011-3.095-6.181-6.274-6.181" /></svg>
                                 </div>
                             </div>
