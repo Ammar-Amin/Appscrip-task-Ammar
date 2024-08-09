@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import ProductCard from '@/components/main/ProductCard'
+import { Loader } from '@/components'
 
 const Main = () => {
 
@@ -156,13 +157,7 @@ const Main = () => {
     }
 
     if (loading) {
-        return (<div className='w-full min-h-[600px] relative'>
-            <div className='absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2'>
-                <div className="loader">
-                    <div className="justify-content-center jimu-primary-loading"></div>
-                </div>
-            </div>
-        </div>)
+        return <Loader />
     }
 
     return (
