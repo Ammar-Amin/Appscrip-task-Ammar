@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import ProductCard from './productCard'
+import ProductCard from '@/components/main/ProductCard'
 
 const Main = () => {
 
@@ -183,7 +183,7 @@ const Main = () => {
 
                 <div className={showFilter ? 'relative' : 'hidden'}>
                     {
-                        showFilter && <div className='absolute md:static z-20 bg-white w-[150px] md:w-[260px]'>
+                        showFilter && <div className='absolute md:static z-20 bg-white w-[150px] pl-3 md:w-[260px]'>
                             <div className='flex gap-3'>
                                 <input type='checkbox' className='p-4 font-bold' />
                                 <label className='uppercase'>customizable</label>

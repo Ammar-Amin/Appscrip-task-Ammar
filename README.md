@@ -1,36 +1,57 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# E-commerce Product Page - React.js & Next.js
 
-First, run the development server:
+This project was developed as part of a technical assignment for a React.js position at Appscrip. The task was to create a functional, responsive e-commerce product page using React.js and Next.js, pulling in product data from the FakeStoreAPI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Responsive Design**: The page is fully responsive, optimized for both mobile and tablet screens.
+- **API Integration**: Utilized [FakeStoreAPI](https://fakestoreapi.com/) to fetch and display product data.
+- **Next.js**: Implemented the project with Next.js, leveraging its server-side rendering and static site generation capabilities.
+- **Code Quality**: Focused on maintaining clean code with proper structure, meaningful naming conventions, and minimized DOM size.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Ammar-Amin/Appscrip-task-Ammar
+   cd folder_name
+   ```
+
+2. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Video Demo
 
-To learn more about Next.js, take a look at the following resources:
+Check out a [video demo](https://www.linkedin.com/feed/update/urn:li:ugcPost:7227628802728738816/) of the project in action!
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Challenges
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project was my first experience using Next.js, which required a quick learning curve. Despite this, I was able to integrate the API and create a seamless user experience across different devices.
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Feel free to fork this repository, make improvements, and submit pull requests. Any contributions are welcome!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+- **LinkedIn**: [Ammar Amin](https://www.linkedin.com/in/ammar-amin5253)
